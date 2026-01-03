@@ -1,12 +1,13 @@
-const express = require("express");
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
 
-const userController = require("../controllers/login");
+// ✅ Make sure path is correct relative to routes folder
+const chatController = require("../controllers/chat.controller")
 
-// 🔐 LOGIN
-router.post("/login", userController.userLogin);
+// Post route for creating conversation
+router.post("/conversation", chatController.createConversation)
 
-// 📝 SIGNUP
-router.post("/signup", userController.userSignup);
+// GET route for messages
+router.get("/messages/:conversationId", chatController.getMessages)
 
-module.exports = router;
+module.exports = router
