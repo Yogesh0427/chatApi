@@ -2,12 +2,12 @@ const express = require("express")
 const router = express.Router()
 
 // ✅ Make sure path is correct relative to routes folder
-const chatController = require("../controllers/chat.controller")
+const Login = require("../controllers/login")
 
 // Post route for creating conversation
-router.post("/conversation", chatController.createConversation)
+router.post("/login", Login.userLogin)
 
-// GET route for messages
-router.get("/messages/:conversationId", chatController.getMessages)
+// Post route for creating conversation
+router.post("/signup", Login.userSignup)
 
 module.exports = router

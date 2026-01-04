@@ -11,7 +11,7 @@ router.post("/fetch_all_chaters", chatController.fetchAllChaters)
 router.post("/conversation", chatController.createConversation)
 
 // GET route for messages
-router.get("/messages/:conversationId", chatController.getMessages)
+router.post("/messages", chatController.getMessages)
 
 module.exports = router
 
